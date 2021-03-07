@@ -10,8 +10,8 @@ all: $(SOURCES)
 
 .SUFFIXES: .c .o
 
-main: main.o  audio.o 
-	$(CC) $(CFLAGS) -lm $(LDFLAGS) -o $@ main.o audio.o $(FLAG)
+main: main.o  audio.o g722_decode.o g722_encode.o
+	$(CC) $(CFLAGS) -lm $(LDFLAGS) -o $@ main.o audio.o g722_decode.o g722_encode.o $(FLAG)
 
 clean: clean-SOURCES
 	rm -f *.o
